@@ -29,7 +29,7 @@ const Header = () => {
       <Link href='/' className={styles.logo}>JonnyGoesPro</Link>
       <ul>
         <li>
-          <Link href='#projects' className='hoverLink'>Projects</Link>
+          <Link href='#about' className='hoverLink'>About me</Link>
         </li>
         <li>
           <Link href='#cv' className='hoverLink'>CV</Link>
