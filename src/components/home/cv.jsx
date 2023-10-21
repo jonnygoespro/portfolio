@@ -18,7 +18,7 @@ const Cv = () => {
             <div className={styles.dot} />
             <p data-aos='fade-right' data-aos-anchor='#period1'>06.02.2017 - 09.02.2017</p>
             <p data-aos='fade-right' data-aos-anchor='#period1'>Ray Sono AG, Munich</p>
-            <p data-aos='fade-right' data-aos-anchor='#period1'>Internship</p>
+            <p data-aos='fade-right' data-aos-anchor='#period1'>Internship as Web & App Developer</p>
           </div>
           <div className={`${styles.period} ${styles.left}`} id='period2'>
             <div className={styles.dot} />
