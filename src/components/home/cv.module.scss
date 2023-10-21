@@ -1,0 +1,275 @@
+@import "./../../styling/base";
+@import "./../../styling/variables";
+@import "./../../styling/fonts";
+
+.cv {
+    width: 100%;
+    position: relative;
+
+    .heading {
+        position: relative;
+        margin-bottom: 140px;
+        width: 100%;
+
+        h2 {
+            font-size: $fs-800;
+            font-weight: 600;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .backgroundText {
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) !important;
+        }
+    }
+
+    .life {
+        $dot-size: 32px;
+        $margin-to-center: 140px;
+
+        position: relative;
+        margin: auto;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: calc(100% - 2 * $dot-size);
+            background-color: black;
+            left: 50%;
+            margin-block: $dot-size;
+            z-index: -2;
+        }
+
+        .periods {
+            width: fit-content;
+            width: 50vw;
+
+            .period.right {
+                left: 100%;
+                padding-left: $margin-to-center;
+
+                p:nth-of-type(1) {
+                    width: fit-content;
+                    margin-left: 0px;
+                }
+
+                p:nth-of-type(3) {
+                    width: fit-content;
+                    margin-left: auto;
+                    margin-right: 0px;
+                }
+
+                .dot {
+                    position: absolute;
+                    top: 50%;
+                    left: 0px;
+                    transform: translateY(-50%) translateX(-50%);
+                    width: $dot-size;
+                    height: $dot-size;
+                    border-radius: 50%;
+                    border: 1px solid $clr-neutral-900;
+                    background-color: $clr-neutral-100;
+                    outline: 16px solid $clr-neutral-100;
+                }
+            }
+
+            .period.left {
+                margin-right: 0px;
+                margin-left: auto;
+                padding-right: $margin-to-center;
+
+                p:nth-of-type(1) {
+                    width: fit-content;
+                    margin-left: auto;
+                }
+
+                p:nth-of-type(3) {
+                    width: fit-content;
+                    margin-left: 0px;
+                }
+
+                .dot {
+                    $dot-size: 32px;
+
+                    position: absolute;
+                    top: 50%;
+                    right: 0px;
+                    transform: translateY(-50%) translateX(50%);
+                    width: $dot-size;
+                    height: $dot-size;
+                    border-radius: 50%;
+                    border: 1px solid $clr-neutral-900;
+                    background-color: $clr-neutral-100;
+                    outline: 16px solid $clr-neutral-100;
+                }
+            }
+
+            .period {
+                width: fit-content;
+                margin-bottom: 220px;
+                position: relative;
+
+                p:nth-of-type(1) {
+                    font-size: $fs-300;
+                    letter-spacing: 1px;
+                }
+
+                p:nth-of-type(2) {
+                    font-size: $fs-500;
+                    // max-width: 32ch;
+                    line-height: 140%;
+                    padding-block: 1rem;
+                }
+
+                p:nth-of-type(3) {
+                    font-size: $fs-300;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint($tablet, $desktop) {
+    .cv {
+        .heading {
+            .backgroundText {
+                transform: translateX(-50%) translateY(-45%) !important;
+
+                text {
+                    font-size: 8rem;
+                    font-weight: 900;
+                }
+
+                text:nth-of-type(1) {
+                    stroke-width: 16px;
+                }
+            }
+        }
+
+        .life {
+            $margin-to-center: 100px;
+
+            .periods {
+                .period.right {
+                    padding-left: $margin-to-center;
+                }
+
+                .period.left {
+                    padding-right: $margin-to-center;
+                }
+
+                .period {
+                    p:nth-of-type(1) {
+                        font-size: $fs-250;
+                    }
+
+                    p:nth-of-type(2) {
+                        font-size: $fs-400;
+                    }
+
+                    p:nth-of-type(3) {
+                        font-size: $fs-250;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(0, $mobile) {
+    .cv {
+        .heading {
+            margin-bottom: 96px;
+
+            h2 {
+                font-size: $fs-650;
+                font-weight: 600;
+            }
+
+            .backgroundText {
+                transform: translateX(-50%) translateY(-55%) !important;
+
+                text {
+                    font-size: 6rem;
+                }
+
+                text:nth-of-type(1) {
+                    stroke-width: 10px;
+                }
+            }
+        }
+
+        .life {
+            $margin-to-center: 48px;
+            $dot-size: 22px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: calc(100% - 2 * $dot-size);
+                background-color: black;
+                left: 64px;
+                margin-block: $dot-size;
+                z-index: -2;
+            }
+
+            .periods {
+                width: 80vw;
+
+                .period.right,
+                .period.left {
+                    left: 64px;
+                    padding-left: $margin-to-center;
+                    padding-right: 0px;
+                    margin-left: 0px;
+
+                    p:nth-of-type(1) {
+                        width: fit-content;
+                        margin-left: 0px;
+                    }
+
+                    p:nth-of-type(3) {
+                        width: fit-content;
+                        margin-left: auto;
+                        margin-right: 0px;
+                    }
+
+                    .dot {
+                        position: absolute;
+                        top: 50%;
+                        left: 0px;
+                        transform: translateY(-50%) translateX(-50%);
+                        width: $dot-size;
+                        height: $dot-size;
+                        border-radius: 50%;
+                        border: 1px solid $clr-neutral-900;
+                        background-color: $clr-neutral-100;
+                        outline: 16px solid $clr-neutral-100;
+                    }
+                }
+
+                .period {
+                    margin-bottom: 180px;
+
+                    p:nth-of-type(1) {
+                        font-size: $fs-200;
+                        width: fit-content;
+                    }
+
+                    p:nth-of-type(2) {
+                        font-size: $fs-350;
+                    }
+
+                    p:nth-of-type(3) {
+                        font-size: $fs-200;
+                    }
+                }
+            }
+        }
+    }
+}
