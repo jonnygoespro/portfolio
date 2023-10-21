@@ -1,0 +1,28 @@
+.hoverLink {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        bottom: -8px;
+        left: 0;
+        height: 1px;
+        background-color: black;
+        transition: width .4s;
+    }
+}
+
+.hoverLink.mouseEntered {
+    &::after {
+        width: 100%;
+    }
+}
+
+.hoverLink.mouseLeft {
+    &::after {
+        left: auto;
+        right: 0;
+        width: 0%;
+    }
+}

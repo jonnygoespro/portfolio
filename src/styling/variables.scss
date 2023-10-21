@@ -1,0 +1,47 @@
+// BREAKPOINTS
+$mobile: 880;
+$tablet: $mobile + 1;
+$desktop: 1280;
+
+// COLORS
+$clr-transparent: hsla(0, 0%, 0%, 0);
+$clr-neutral-100: hsl(0, 0%, 100%);
+$clr-neutral-300: hsla(0, 0%, 0%, 0.03);
+$clr-primary-500: hsl(35, 77%, 91%);
+$clr-neutral-900: hsl(0, 0%, 0%);
+
+// Font Sizes
+$fs-100: 0.5rem; // 8px
+$fs-200: 0.75rem; // 12px
+$fs-250: 0.875rem; // 14px
+$fs-300: 1rem; // 16px
+$fs-350: 1.125rem; // 18px
+$fs-400: 1.25rem; // 20px
+$fs-500: 1.5rem; // 24px
+$fs-600: 2rem; // 32px
+$fs-650: 2.625rem; // 42px
+$fs-700: 3rem; // 48px
+$fs-800: 4.5rem; // 72px
+$fs-900: 6rem; // 96px
+$fs-950: 12rem; // 192px
+
+// Spacing:
+$h-padding: 140px;
+$h-padding-tablet: 80px;
+$h-padding-mobile: 42px;
+
+$header-height: 120px;
+$header-height-mobile: 100px;
+$header-height-nv: 120px;
+$header-height-nv-mobile: 100px;
+
+$letter-spacing-s: 1px;
+$letter-spacing-l: 10px;
+
+$border-radius-l: 72px;
+$border-radius-m: 48px;
+
+$animation-duration-short: .4s;
+$animation-duration-long: .8s;
+
+$line-height-l: 180%;
