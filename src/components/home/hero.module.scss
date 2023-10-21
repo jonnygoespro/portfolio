@@ -1,0 +1,377 @@
+@import "./../../styling/base";
+@import "./../../styling/variables";
+@import "./../../styling/fonts";
+@import "./../../styling/hover";
+
+.hero {
+    position: relative;
+    padding-top: $header-height-nv;
+    height: calc(100vh - $header-height-nv);
+    display: flex;
+    width: 100%;
+    transition: padding $animation-duration-short;
+
+    .leftSide {
+        width: 60%;
+        margin-left: $h-padding;
+        position: relative;
+
+        .caption {
+            position: relative;
+            width: fit-content;
+            margin-top: 15%;
+            font-weight: 600;
+
+            p:nth-of-type(1) {
+                font-size: $fs-650;
+            }
+
+            p:nth-of-type(2) {
+                position: relative;
+                font-size: $fs-800;
+                font-weight: 600;
+                margin-block: 40px;
+
+                &::after {
+                    position: absolute;
+                    z-index: -1;
+                    bottom: -16px;
+                    left: -8px;
+                    content: '';
+                    width: calc(100% + 16px);
+                    height: 48px;
+                    background: $clr-primary-500;
+                }
+            }
+
+            p:nth-of-type(3) {
+                font-size: $fs-650;
+                text-align: right;
+            }
+
+            .backgroundText {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%) translateX(-72px) !important;
+
+                text {
+                    font-family: Manrope;
+                    font-size: 12rem;
+                    font-weight: 900;
+                    letter-spacing: 24px;
+                }
+
+                text:nth-of-type(1) {
+                    stroke-width: 24px;
+                }
+            }
+        }
+
+        .cta {
+            letter-spacing: $letter-spacing-s;
+            margin-top: 10rem;
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-left: 24px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .rightSide {
+        position: absolute;
+        height: calc(100vh - $header-height-nv);
+        aspect-ratio: 3 /4;
+        right: 0;
+
+        .image {
+            width: 100%;
+            border-radius: $border-radius-l 0px $border-radius-l 0px;
+            -moz-border-radius: $border-radius-l 0px $border-radius-l 0px;
+            -webkit-border-radius: $border-radius-l 0px $border-radius-l 0px;
+            overflow: hidden;
+            background-color: transparent;
+            mix-blend-mode: darken;
+
+            .imageHelper {
+                border-radius: $border-radius-l 0px $border-radius-l 0px;
+                -moz-border-radius: $border-radius-l 0px $border-radius-l 0px;
+                -webkit-border-radius: $border-radius-l 0px $border-radius-l 0px;
+                overflow: hidden;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    pointer-events: none;
+                    mix-blend-mode: difference;
+                    user-select: none;
+                    transition: scale $animation-duration-long;
+                }
+            }
+        }
+
+        .circularText {
+            right: 24px;
+            bottom: 24px;
+            font-size: $fs-200;
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+
+            .text {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+
+                span {
+                    position: absolute;
+                    left: 50%;
+                    transform-origin: 0 70px;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .ctaMobile {
+        display: none;
+    }
+}
+
+@include breakpoint($tablet, $desktop) {
+    .hero {
+        padding-top: $header-height-nv-mobile;
+        height: auto;
+
+        .leftSide {
+            margin-top: 160px;
+            margin-left: $h-padding-tablet;
+
+            .caption {
+                margin-top: 32px;
+
+                p:nth-of-type(1) {
+                    font-size: $fs-600;
+                }
+
+                p:nth-of-type(2) {
+                    font-size: $fs-800;
+                    margin-block: 16px;
+
+                    &::after {
+                        bottom: -6px;
+                        height: 24px;
+                    }
+                }
+
+                p:nth-of-type(3) {
+                    font-size: $fs-600;
+                }
+
+                .backgroundText {
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%) translateX(-32px) !important;
+
+                    text {
+                        font-family: Manrope;
+                        font-size: 8rem;
+                        font-weight: 900;
+                        letter-spacing: 24px;
+                    }
+
+                    text:nth-of-type(1) {
+                        stroke-width: 24px;
+                    }
+                }
+            }
+        }
+
+        .rightSide {
+            z-index: -1;
+            height: auto;
+
+            .image {
+                margin-top: 10%;
+                width: 40vw;
+            }
+
+            .circularText {
+                right: 16px;
+                bottom: 16px;
+                font-size: $fs-100;
+                width: 100px;
+                height: 100px;
+
+                .text {
+                    span {
+                        transform-origin: 0 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(0, $mobile) {
+    .hero {
+        padding-top: $header-height-nv-mobile;
+        height: auto;
+        flex-direction: column;
+
+        .leftSide {
+            width: 100%;
+            margin-left: $h-padding-mobile;
+            margin-bottom: 64px;
+
+            .caption {
+                margin-top: 32px;
+
+                p:nth-of-type(1) {
+                    font-size: $fs-500;
+                }
+
+                p:nth-of-type(2) {
+                    font-size: $fs-650;
+                    margin-block: 16px;
+
+                    &::after {
+                        bottom: -6px;
+                        height: 24px;
+                    }
+                }
+
+                p:nth-of-type(3) {
+                    font-size: $fs-500;
+                }
+
+                .backgroundText {
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%) translateX(-32px) !important;
+
+                    text {
+                        font-family: Manrope;
+                        font-size: 8rem;
+                        font-weight: 900;
+                        letter-spacing: 24px;
+                    }
+
+                    text:nth-of-type(1) {
+                        stroke-width: 24px;
+                    }
+                }
+            }
+
+            .cta {
+                display: none;
+            }
+        }
+
+        .rightSide {
+            width: 320px;
+            height: auto;
+            position: relative;
+            margin-left: auto;
+            margin-right: 0px;
+
+            .image {
+                border-radius: $border-radius-m 0px $border-radius-m 0px;
+                -moz-border-radius: $border-radius-m 0px $border-radius-m 0px;
+                -webkit-border-radius: $border-radius-m 0px $border-radius-m 0px;
+
+                .imageHelper {
+                    border-radius: $border-radius-m 0px $border-radius-m 0px;
+                    -moz-border-radius: $border-radius-m 0px $border-radius-m 0px;
+                    -webkit-border-radius: $border-radius-m 0px $border-radius-m 0px;
+                    overflow: hidden;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        pointer-events: none;
+                        mix-blend-mode: difference;
+                        user-select: none;
+                        transition: scale $animation-duration-long;
+                    }
+                }
+            }
+
+            .circularText {
+                right: 10px;
+                bottom: 10px;
+                font-size: $fs-100;
+                width: 100px;
+                height: 100px;
+
+                .text {
+                    span {
+                        transform-origin: 0 50px;
+                    }
+                }
+            }
+        }
+
+        .ctaMobile {
+            margin-left: $h-padding-mobile;
+            letter-spacing: $letter-spacing-s;
+            margin-top: 64px;
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-left: 24px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 20s linear infinite;
+    -moz-animation: rotating 20s linear infinite;
+    -ms-animation: rotating 20s linear infinite;
+    -o-animation: rotating 20s linear infinite;
+    animation: rotating 20s linear infinite;
+}
