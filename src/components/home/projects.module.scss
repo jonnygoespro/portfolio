@@ -1,0 +1,77 @@
+@import "./../../styling/base";
+@import "./../../styling/variables";
+@import "./../../styling/fonts";
+@import "./../../styling/hover";
+
+.projects {
+    width: 100%;
+    position: relative;
+
+    .heading {
+        position: relative;
+        margin-bottom: 140px;
+        width: 100%;
+
+        h2 {
+            font-size: $fs-800;
+            font-weight: 600;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .backgroundText {
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) !important;
+        }
+    }
+
+    .project {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        align-items: center;
+
+        .rightSide {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+
+            h3 {
+                font-size: $fs-700;
+                line-height: 4rem;
+            }
+
+            .description {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                p {
+                    font-size: $fs-300;
+                    line-height: 1.75rem;
+                }
+            }
+            
+            
+            .cta {
+                font-size: $fs-300;
+                line-height: 1.5rem;
+                display: flex;
+                align-items: center;
+
+                a {
+                    font-family: Manrope;
+                }
+            
+                img {
+                    margin-left: 24px;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}

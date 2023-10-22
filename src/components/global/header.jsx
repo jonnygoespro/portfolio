@@ -32,6 +32,9 @@ const Header = () => {
           <Link href='#about' className='hoverLink'>About me</Link>
         </li>
         <li>
+          <Link href='#projects' className='hoverLink'>Projects</Link>
+        </li>
+        <li>
           <Link href='#cv' className='hoverLink'>CV</Link>
         </li>
         <li>
