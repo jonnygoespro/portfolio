@@ -26,50 +26,142 @@
         }
     }
 
-    .project {
-        width: 60%;
-        margin: auto;
+    .projectList {
         display: flex;
-        flex-direction: row;
-        gap: 32px;
-        align-items: center;
-
-        .rightSide {
+        flex-direction: column;
+        gap: 144px;
+        
+        .project {
+            width: 80%;
+            margin: auto;
             display: flex;
-            flex-direction: column;
-            gap: 48px;
-
-            h3 {
-                font-size: $fs-700;
-                line-height: 4rem;
+            flex-direction: row;
+            gap: 64px;
+            align-items: center;
+    
+            .leftSide {
+                width: 50%;
+    
+                img {
+                    width: 100%;
+                }
             }
-
-            .description {
+    
+            .rightSide {
                 display: flex;
                 flex-direction: column;
-                gap: 16px;
-
-                p {
+                gap: 48px;
+                width: 50%;
+                max-width: 64ch;
+    
+                h3 {
+                    font-size: $fs-700;
+                    line-height: 4rem;
+                }
+    
+                .description {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+    
+                    p {
+                        font-size: $fs-300;
+                        line-height: 1.75rem;
+                    }
+                }
+                
+                
+                .cta {
                     font-size: $fs-300;
-                    line-height: 1.75rem;
+                    line-height: 1.5rem;
+                    display: flex;
+                    align-items: center;
+    
+                    a {
+                        font-family: Manrope;
+                    }
+                
+                    img {
+                        margin-left: 24px;
+                        width: 20px;
+                        height: 20px;
+                    }
                 }
             }
-            
-            
-            .cta {
-                font-size: $fs-300;
-                line-height: 1.5rem;
-                display: flex;
-                align-items: center;
+        }
+    }
+}
 
-                a {
-                    font-family: Manrope;
+@include breakpoint($tablet, $desktop) {
+    .projects {
+        .heading {
+            margin-bottom: 96px;
+        }
+
+        .projectList {
+            gap: 96px;
+
+            .project {
+                width: 95%;
+                gap: 32px;
+
+                .rightSide {
+                    gap: 24px;
+
+                    h3 {
+                        font-size: $fs-600;
+                    }
                 }
-            
-                img {
-                    margin-left: 24px;
-                    width: 20px;
-                    height: 20px;
+            }
+        }
+    }
+}
+
+@include breakpoint(0, $mobile) {
+    .projects {
+        .heading {
+            margin-bottom: 64px;
+
+            h2 {
+                margin-left: $h-padding-mobile;
+                font-size: $fs-650;
+                font-weight: 600;
+            }
+
+            .backgroundText {
+                transform: translateX(-50%) translateY(-55%) !important;
+
+                text {
+                    font-size: 6rem;
+                }
+
+                text:nth-of-type(1) {
+                    stroke-width: 10px;
+                }
+            }
+        }
+
+        .projectList {
+            padding-inline: $h-padding-mobile;
+            gap: 64px;
+
+            .project {
+                flex-direction: column-reverse;
+                width: 100%;
+                align-items: start;
+
+                .leftSide {
+                    width: calc(100% - 2* $h-padding-mobile);
+                }
+
+                .rightSide {
+                    width: 100%;
+                    gap: 12px;
+
+                    h3 {
+                        font-size: $fs-500;
+                        font-weight: 500;
+                    }
                 }
             }
         }

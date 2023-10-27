@@ -32,25 +32,27 @@ const Projects = () => {
           </svg>
         </div>
       </div>
-      {projects.map((project, index) => {
-        return (
-          <div className={styles.project} key={index}>
-            <div className={styles.leftSide} data-aos='fade-right'>
-              <img src={`/images/${project.heroImageName}`} alt='' />
-            </div>
-            <div className={styles.rightSide} data-aos='fade-left'>
-              <h3>{project.name}</h3>
-              <div className={styles.description}>
-                <NewlineText text={project.shortDescription} />
+      <div className={styles.projectList}>
+        {projects.map((project, index) => {
+          return (
+            <div className={styles.project} key={index}>
+              <div className={styles.leftSide} data-aos='fade-right'>
+                <img src={`/images/${project.heroImageName}`} alt='' />
               </div>
-              <div className={styles.cta}>
-                <a href='' className='hoverLink'>Read more about the project</a>
-                <img src='/icons/arrowRight.svg' alt='Arrow' />
+              <div className={styles.rightSide} data-aos='fade-left'>
+                <h3>{project.name}</h3>
+                <div className={styles.description}>
+                  <NewlineText text={project.shortDescription} />
+                </div>
+                {/* <div className={styles.cta}>
+                  <a href='' className='hoverLink'>Read more about the project</a>
+                  <img src='/icons/arrowRight.svg' alt='Arrow' />
+                </div> */}
               </div>
             </div>
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </section>
   )
 }
