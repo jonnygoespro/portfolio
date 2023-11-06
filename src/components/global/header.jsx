@@ -24,21 +24,25 @@ const Header = () => {
     }
   }, [])
 
+  const linkClicked = (e) => {
+    setIsBurgerOpen(false)
+  }
+
   return (
     <header className={`${styles.header} ${isHeaderFullHeight ? styles.active : ''}`}>
       <Link href='/' className={styles.logo}>JonnyGoesPro</Link>
-      <ul>
+      <ul className={`${isBurgerOpen ? styles.isBurgerOpen : ''}`}>
         <li>
-          <Link href='#about' className='hoverLink'>About me</Link>
+          <Link href='#about' className='hoverLink' onClick={linkClicked}>About me</Link>
         </li>
         <li>
-          <Link href='#projects' className='hoverLink'>Projects</Link>
+          <Link href='#projects' className='hoverLink' onClick={linkClicked}>Projects</Link>
         </li>
         <li>
-          <Link href='#cv' className='hoverLink'>CV</Link>
+          <Link href='#cv' className='hoverLink' onClick={linkClicked}>CV</Link>
         </li>
         <li>
-          <Link href='#contact' className='hoverLink'>Contact</Link>
+          <Link href='#contact' className='hoverLink' onClick={linkClicked}>Contact</Link>
         </li>
       </ul>
       <button className={`${styles.hamburger} ${styles['hamburger--spin']} ${isBurgerOpen ? styles['is-active'] : ''}`} type='button' onClick={() => setIsBurgerOpen(!isBurgerOpen)}>

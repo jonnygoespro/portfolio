@@ -84,8 +84,31 @@
 
         ul {
             display: none;
+            
         }
+        
+        ul.isBurgerOpen {
+            background-color: white;
+            display: block;
+            position: absolute;
+            top: $header-height-mobile;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - $header-height-mobile);
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+            justify-content: center;
+            opacity: 1;
 
+            li {
+                padding-block: auto;
+                align-self: center;
+                font-size: $fs-400;
+            }
+        }
+        
+        
         .hamburger {
             display: block;
         }
