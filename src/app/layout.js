@@ -7,7 +7,7 @@ import Head from 'next/head'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'JonnyGoesPro | Webdesign & Webdevelopment',
+  title: 'JonnyGoesPro | Webdevelopment & Webdesign',
   description: "Let's collaborate and turn your digital dreams into reality. Join hands with a webdeveloper and webdesigner based in Salzburg, Austria. Together, we'll create a powerful online presence and achieve your goals."
 }
 
