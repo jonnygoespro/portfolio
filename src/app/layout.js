@@ -1,10 +1,7 @@
-import { Inter } from 'next/font/google'
 import '@/styling/style.scss'
 import Header from '@/components/global/header'
 import Footer from '@/components/global/footer'
 import Head from 'next/head'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'JonnyGoesPro | Webdevelopment & Webdesign',
@@ -13,7 +10,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => (
   <html lang='en'>
-    <body className={inter.className}>
+    <body>
       <Head>
         <link rel='shortcut icon' href='/favicon.ico' />
         <link rel='apple-touch-icon' sizes='180x180' href='/images/favicon/apple-touch-icon.png' />
